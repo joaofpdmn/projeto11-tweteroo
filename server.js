@@ -25,7 +25,7 @@ app.get('/tweets', (req, res) => {
         console.log("Não há tweets!");
     }
    const last10Tweets = [];
-   for(let i=0;i<tweets.length;i++){
+   for(let i=tweets.length;i>=0;i--){
     const avatar = users.find((user) => user.username === tweets[i].username);
     last10Tweets.push({avatar, ...tweets[i]});
    }
